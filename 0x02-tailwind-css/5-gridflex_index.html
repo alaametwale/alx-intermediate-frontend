@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid and Flexbox Layout</title>
+    <!-- تحميل Tailwind CSS عبر CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* التنسيق اليدوي المطلوب لجعله عموديًا على الشاشات الصغيرة */
+        @media (max-width: 768px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="p-4 bg-gray-50 min-h-screen">
+    <!-- الرأس: تصميم أساسي -->
+    <header class="bg-blue-500 text-white p-4 rounded-t-lg shadow-lg">
+        <h1 class="text-3xl font-bold">Grid and Flexbox Layout</h1>
+    </header>
+
+    <!-- 
+        القسم الرئيسي (Main): يستخدم Grid
+        - grid: تمكين Grid
+        - grid-cols-1: عمود واحد افتراضياً (للهواتف)
+        - lg:grid-cols-3: ثلاثة أعمدة على الشاشات الكبيرة (Large)
+        - gap-4: تباعد 4 بين العناصر
+        - mt-4: هامش علوي 4
+    -->
+    <main class="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-4">
+        
+        <!-- 
+            القسم الأول (Section): يستخدم Flexbox ويمتد عمودين في الـ Grid
+            - lg:col-span-2: يمتد عمودين في تخطيط Grid (عندما يكون العرض كبيراً)
+            - flex: تمكين Flexbox لترتيب العناصر الداخلية (divs)
+            - gap-4: إضافة تباعد بين عناصر Flexbox
+            - flex-col lg:flex-row: عمودي على الجوال، وأفقي على شاشات سطح المكتب
+        -->
+        <section class="lg:col-span-2 flex flex-col lg:flex-row gap-4 p-4 bg-white rounded-lg shadow-md border border-gray-100">
+            
+            <!-- عنصر Flexbox 1 -->
+            <div class="p-4 rounded-lg w-full lg:w-1/2 bg-red-200 text-red-800 font-semibold shadow-inner">
+                Flexbox Item 1 (50%)
+            </div>
+            
+            <!-- عنصر Flexbox 2 -->
+            <div class="p-4 rounded-lg w-full lg:w-1/2 bg-red-400 text-red-900 font-semibold shadow-inner">
+                Flexbox Item 2 (50%)
+            </div>
+        </section>
+        
+        <!-- 
+            الشريط الجانبي (Aside): يشغل العمود الثالث في الـ Grid
+        -->
+        <aside class="bg-green-200 p-4 rounded-lg shadow-md text-green-800 font-semibold">
+            Sidebar (Grid Column 3)
+            <div class="mt-2 text-sm text-green-700">
+                This area takes up one full column in the 3-column grid.
+            </div>
+        </aside>
+    </main>
+
+    <!-- التذييل (Footer) -->
+    <footer class="bg-gray-800 text-white p-4 mt-4 rounded-b-lg shadow-xl">
+        <p class="text-center text-sm">&copy; 2024 John Doe's Blog</p>
+    </footer>
+</body>
+</html>
