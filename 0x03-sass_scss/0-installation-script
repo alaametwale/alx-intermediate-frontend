@@ -1,0 +1,8 @@
+Steps I took to install SASS: 
+ 
+1. Created a new directory called 0x03-sass_scss inside alx-intermediate-frontend repository. 
+2. Installed Node.js version 20.16 (using nvm on Ubuntu) [Optional for Windows]. 
+3. Installed SASS using npm with version 3.7.4: 
+   npm install sass -v 3.7.4 
+4. Verified installation by running: 
+   sass --version 
